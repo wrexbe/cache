@@ -38286,7 +38286,7 @@ function extractTar(archivePath, compressionMethod) {
                 case constants_1.CompressionMethod.ZstdWithoutLong:
                     return ['--use-compress-program', 'zstd -d'];
                 default:
-                    return ['-z'];
+                    return ['-J'];
             }
         }
         const args = [
@@ -38319,7 +38319,7 @@ function createTar(archiveFolder, sourceDirectories, compressionMethod) {
                 case constants_1.CompressionMethod.ZstdWithoutLong:
                     return ['--use-compress-program', 'zstd -T0'];
                 default:
-                    return ['-z'];
+                    return ['-J'];
             }
         }
         const args = [
@@ -38352,7 +38352,7 @@ function listTar(archivePath, compressionMethod) {
                 case constants_1.CompressionMethod.ZstdWithoutLong:
                     return ['--use-compress-program', 'zstd -d'];
                 default:
-                    return ['-z'];
+                    return ['-J'];
             }
         }
         const args = [
