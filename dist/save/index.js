@@ -1159,8 +1159,7 @@ function getVersion(app) {
 function getCompressionMethod() {
     return __awaiter(this, void 0, void 0, function* () {
         if (process.platform === 'win32' && !(yield isGnuTarInstalled())) {
-            // Disable zstd due to bug https://github.com/actions/cache/issues/301
-            return constants_1.CompressionMethod.Gzip;
+            return constants_1.CompressionMethod.Zstd;// ignore the bug
         }
         const versionOutput = yield getVersion('zstd');
         const version = semver.clean(versionOutput);
