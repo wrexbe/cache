@@ -38337,7 +38337,7 @@ function listTar(archivePath, compressionMethod) {
         function getCompressionProgram() {
             switch (compressionMethod) {
                 case constants_1.CompressionMethod.Zstd:
-                    return ['--use-compress-program', 'zstd -d --long=30'];
+                    return ['--use-compress-program', 'zstd -d --fast'];
                 case constants_1.CompressionMethod.ZstdWithoutLong:
                     return ['--use-compress-program', 'zstd -d'];
                 default:
