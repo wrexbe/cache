@@ -38227,7 +38227,7 @@ function getTarPath(args, compressionMethod) {
     return __awaiter(this, void 0, void 0, function* () {
         switch (process.platform) {
             case 'win32': {
-                const systemTar = `${process.env['windir']}\\System32\\tar.exe`;
+                const systemTar = `${process.env['windir']}\\msys64\\usr\\bin\\tar.exe`;
                 if (compressionMethod !== constants_1.CompressionMethod.Gzip) {
                     // We only use zstandard compression on windows when gnu tar is installed due to
                     // a bug with compressing large files with bsdtar + zstd
