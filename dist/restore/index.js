@@ -38228,13 +38228,13 @@ function getTarPath(args, compressionMethod) {
         switch (process.platform) {
             case 'win32': {
                 const systemTar = `${process.env['windir']}\\msys64\\usr\\bin\\tar.exe`;
+                return systemTar;
                 if (compressionMethod !== constants_1.CompressionMethod.Gzip) {
                     // We only use zstandard compression on windows when gnu tar is installed due to
                     // a bug with compressing large files with bsdtar + zstd
                    // args.push('--force-local');
                 }
                 else if (fs_1.existsSync(systemTar)) {
-                    return systemTar;
                 }
                 else if (yield utils.isGnuTarInstalled()) {
                     args.push('--force-local');
